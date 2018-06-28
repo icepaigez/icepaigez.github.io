@@ -1,0 +1,29 @@
+<form method="post">
+    <h2>Enter some text to ROT13:</h2>
+    <textarea name="text" rows="7" cols="70">{{some}}</textarea>
+    {% set alp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+    {% set counta = "" %}
+    {% set x = 0 %}
+    {% for i in some %}
+        {% if i in alp and alp.index(i) < 13 and i.islower() and x < some |length %}
+            {% set counta = counta + alp[alp.index(i) + 13] %}
+            {% set x = x + 1 %}
+        {% elif i in alp and 13 <= alp.index(i) <= 25  and i.islower() and x < some |length %}
+            {% set counta = counta + alp[alp.index(i) - 13] %}
+            {% set x = x + 1 %}
+        {% elif i in alp and 25 <= alp.index(i) <= 38 and x < some |length %}
+            {% set counta = counta + alp[alp.index(i) + 13] %}
+            {% set x = x + 1 %}
+        {% elif i in alp and alp.index(i) > 38 and x < some |length %}
+            {% set counta = counta + alp[alp.index(i) - 13] %}
+            {% set x = x + 1 %}
+        {% elif i not in alp %}
+            {% set counta = counta + i %}
+            {% set x = x + 1 %}
+        {% endif %}
+    {% endfor %}
+
+
+    <br>
+    <button>Submit</button>
+</form>

@@ -1,0 +1,43 @@
+body {
+	background: url(startup.jpg) no-repeat center center fixed;
+	background-size: cover; 
+	font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+	margin-top: 15%
+}
+
+.col {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+h2 {
+	color: white;
+	margin-bottom: 200px;
+}
+
+.col h2:hover {
+	color: #F05F44;
+}
+
+.my-button {
+	border: 10px solid #F05F44;
+	background-color: #F05F44;
+	color: white;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+
+.col my-button:hover {
+	color: white;
+	
+}
+
+.col my-button {
+	text-decoration: none;
+}
+
